@@ -1,0 +1,299 @@
+/* ----------------------------
+    Typo
+---------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+
+body {
+    font-family: 'Cuprum', sans-serif;
+    color: #1d1d1d;
+}
+
+.font-code {
+    font-family: 'Press Start 2P', "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+/* ----------------------------
+    STRUCTURE
+---------------------------- */
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eceff1;
+}
+
+.page {
+
+}
+
+.page.full-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 24px;
+}
+.page-box-max {
+    max-width: 300px;
+}
+.page-box-min {
+    min-width: 300px;
+    min-height: 300px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: column;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----------------------------
+    CONNECTION
+---------------------------- */
+#page-connection {
+
+}
+
+#page-connection .help-block {
+    font-size: 12px;
+}
+
+#page-app .chatbox-header {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 2px;
+    background: #fff;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    border: 1px solid darkgray;
+    margin-top: 1rem;
+}
+#page-app .chatbox-header h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+#page-app .chatbox-header p {
+    font-size: 2rem;
+}
+
+#page-app .chatbox-header .btn-login {
+    background-image: none;
+    text-shadow: none;
+    border-color: rgba(0,0,0,0.2);
+    color: #fff;
+    padding-left: 32px;
+    height: 30px;
+    line-height: 18px;
+    font-weight: normal;
+    outline: none;
+}
+
+#page-app .chatbox-header .btn-login .fab {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 28px;
+    text-align: center;
+    line-height: 28px;
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+#page-app .chatbox-header .github-button {
+    background-color: #444;
+
+}
+#page-app .chatbox-header .github-button:hover {
+    background-color: #2b2b2b;
+
+}
+
+
+#page-app .chatbox-header .facebook-button {
+    background-color: #3b5998;
+}
+#page-app .chatbox-header .facebook-button:hover {
+    background-color: #2d4373;
+}
+
+#page-app .chatbox-header .twitter-button {
+    background-color: #55acee;
+}
+#page-app .chatbox-header .twitter-button:hover {
+    background-color: #2795e9;
+}
+
+/* ----------------------------
+    MESSAGES
+---------------------------- */
+
+#page-app .chatbox {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+}
+
+#page-app .chatbox .messages {
+    padding: 1rem;
+    background: #fff;
+    font-size: 1.6rem;
+    border: 1px solid darkgray;
+    border-radius: 2px;
+    position: relative;
+}
+
+
+#page-app .chatbox .messages-container {
+    width: 100%;
+    padding: 1rem;
+    /*max-height: calc( 300px - 2rem );*/
+    height: 40vh;
+    overflow-y: scroll;
+}
+#page-app .chatbox .messages-container.disabled {
+    filter: blur(5px);
+}
+#page-app .chatbox .messages-container .group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#page-app .chatbox .messages-container .group::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+#page-app .chatbox .messages-containers .group::-webkit-scrollbar-thumb {
+    background-color: #eceff1;
+}
+
+/* ----------------------------
+    MESSAGE
+---------------------------- */
+#page-app .chatbox .messages-container .group .message {
+    max-width: 50%;
+    min-width: 40%;
+    position: relative;
+    padding: 1rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#page-app .chatbox .user-message {
+    align-self: flex-end;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #414345 0, #232526 100%);
+}
+
+#page-app .chatbox .messages-container .group .not-user-message {
+    align-self: flex-start;
+    background-image: linear-gradient(to bottom, #E0EAFC 0, #CFDEF3 100%);
+}
+
+
+#page-app .chatbox .messages-container .group .message:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+}
+#page-app .chatbox .user-message:after {
+    bottom: -7px;
+    right: 10px;
+    width: 0;
+    border-width: 7px 0 0 10px;
+    border-color: #232526 transparent;
+}
+#page-app .chatbox .messages-container .group .not-user-message:after {
+    top: -7px;
+    left: 10px;
+    width: 0;
+    border-width: 0 10px 7px 0;
+    border-color: #E0EAFC transparent;
+}
+
+
+#page-app .chatbox .messages-container .author {
+    font-size: 1.4rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+#page-app .chatbox .messages-container .author .glyphicon {
+    font-size: 1rem;
+    top: 0;
+}
+
+/* ----------------------------
+    FORMULAIRE
+---------------------------- */
+
+#page-app .chatbox label {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/*#page-app .chatbox .form.disabled .form-group:after {*/
+    /*content: 'You need to log to your account';*/
+    /*font-style: italic;*/
+    /*font-size: 1rem;*/
+/*}*/
+
+#page-app .chatbox .info {
+    float: right;
+    text-align: right;
+}
+#page-app .chatbox textarea {
+    width: 100%;
+    height: 10rem;
+    resize: none;
+    font-size: 1.4rem;
+    outline: none;
+    color: darkgray;
+    padding: 5px 10px;
+}
+
+#page-app .chatbox textarea:focus {
+    border-color: transparent;
+    outline: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+/* ----------------------------
+    NotFound
+---------------------------- */
+#page-not-found {
+}
+#page-not-found h1,
+#page-not-found h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#page-not-found h1 {
+    font-size: 3rem;
+}
+
+#page-not-found h2 {
+    font-size: 2rem;
+}
